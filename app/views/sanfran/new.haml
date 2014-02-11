@@ -1,0 +1,17 @@
+
+.container
+  .row
+    .col-md-10
+      %h1 Set Bail
+
+      = form_tag 'bail_calc', :class => "form-horizontal" do
+        = field_set_tag do
+          = label_tag :trial, "Trial"
+          = select_tag(:trial, options_for_select([['Jury', 1], ["Misdemeanor", 2], ["Felony", 3]]))
+          = label_tag :charges, "Charges"
+          = text_field_tag :charges
+          = label_tag :parole, "parole"
+          = text_field_tag :parole
+          = button_tag(type: "submit", class: "btn btn-default") do
+            Set Bail
+     
